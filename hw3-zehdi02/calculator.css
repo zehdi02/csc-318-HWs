@@ -1,0 +1,20 @@
+/* .output {
+  border: solid 1px #dadbe0;
+  background-color: #fffeff;
+} */
+
+.non-numbers td, .symbols td {
+  background-color: #dadcdf;
+}
+
+.numpad td {
+  background-color: #f1f3f3;
+}
+
+td {
+  font-weight: 500;
+}
+td:hover {
+  cursor: pointer;
+  filter: brightness(90%);
+}

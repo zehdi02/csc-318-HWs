@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator MDC</title>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+  <h1 class="font-medium" style="margin: 1rem;">Melchizedek De Castro</h1>
+  <a class="text-3xl hover:underline" style="margin: 1rem;"
+    href="../index.html">List of HWs</a>
+  <div class="container flex flex-col" style="width: fit-content; margin: auto;">
+    <div class="output m-2 border rounded border-gray-400">
+      <p class="p-2" style="text-align: end;">123</p>
+    </div>
+    <div class="inputs flex flex-row">
+      <div class="non-numbers ml-auto">
+        <table class="border-separate" style="border-spacing: .5rem;">
+          <tbody>
+            <tr>
+              <td class="text-center px-8 py-1 rounded" style="color: #707578;">Deg</td>
+              <td class="text-center px-8 py-1 rounded">x!</td>
+            </tr>
+            <tr>
+              <td class="text-center px-8 py-1 rounded">sin</td>
+              <td class="text-center px-8 py-1 rounded">ln</td>
+            </tr>
+            <tr>
+              <td class="text-center px-8 py-1 rounded">cos</td>
+              <td class="text-center px-8 py-1 rounded">log</td>
+            </tr>
+            <tr>
+              <td class="text-center px-8 py-1 rounded">tan</td>
+              <td class="text-center px-8 py-1 rounded">√</td>
+            </tr>
+            <tr>
+              <td class="text-center px-8 py-1 rounded">EXP</td>
+              <td class="text-center px-8 py-1 rounded">x<sup>y</sup></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="numpad flex-grow-0">
+        <table class="border-separate w-max" style="border-spacing: .5rem;">
+          <tbody>
+            <tr class="symbols">
+              <td class="text-center px-8 py-1 rounded">(</td>
+              <td class="text-center px-8 py-1 rounded">)</td>
+              <td class="text-center px-8 py-1 rounded">%</td>
+              <td class="text-center px-8 py-1 rounded">AC</td>
+            </tr>
+            <tr>
+              <td class="text-center px-8 py-1 rounded">7</td>
+              <td class="text-center px-8 py-1 rounded">8</td>
+              <td class="text-center px-8 py-1 rounded">9</td>
+              <td class="symbols text-center rounded">÷</td>
+            </tr>
+            <tr>
+              <td class="text-center px-8 py-1 rounded">4</td>
+              <td class="text-center px-8 py-1 rounded">5</td>
+              <td class="text-center px-8 py-1 rounded">6</td>
+              <td class="symbols text-center rounded">×</td>
+            </tr>
+            <tr>
+              <td class="text-center px-8 py-1 rounded">1</td>
+              <td class="text-center px-8 py-1 rounded">2</td>
+              <td class="text-center px-8 py-1 rounded">3</td>
+              <td class="symbols text-center rounded">−</td>
+            </tr>
+            <tr>
+              <td class="text-center px-8 py-1 rounded">0</td>
+              <td class="text-center px-8 py-1 rounded">.</td>
+              <td class="symbols text-center rounded" style="background-color: #5382ec; color: white;">=</td>
+              <td class="symbols text-center rounded">+</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
