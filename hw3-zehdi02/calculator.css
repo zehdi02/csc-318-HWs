@@ -2,19 +2,17 @@
   border: solid 1px #dadbe0;
   background-color: #fffeff;
 } */
-
-.non-numbers td, .symbols td {
-  background-color: #dadcdf;
+body {
+  height: 100vh;
 }
 
-.numpad td {
+.row button {
   background-color: #f1f3f3;
+  width: 5rem;
+  height: 2rem;
 }
 
-td {
-  font-weight: 500;
-}
-td:hover {
+.row button:hover {
   cursor: pointer;
   filter: brightness(90%);
 }

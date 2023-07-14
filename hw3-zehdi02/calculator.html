@@ -12,73 +12,121 @@
   <a class="text-3xl hover:underline" style="margin: 1rem;"
     href="../index.html">List of HWs</a>
   <div class="container flex flex-col" style="width: fit-content; margin: auto;">
+    
     <div class="output m-2 border rounded border-gray-400">
-      <p class="p-2" style="text-align: end;">123</p>
+      <input class="p-2 w-full" style="text-align: end;"
+        id="output" type="text" placeholder="0">
     </div>
-    <div class="inputs flex flex-row">
-      <div class="non-numbers ml-auto">
-        <table class="border-separate" style="border-spacing: .5rem;">
-          <tbody>
-            <tr>
-              <td class="text-center px-8 py-1 rounded" style="color: #707578;">Deg</td>
-              <td class="text-center px-8 py-1 rounded">x!</td>
-            </tr>
-            <tr>
-              <td class="text-center px-8 py-1 rounded">sin</td>
-              <td class="text-center px-8 py-1 rounded">ln</td>
-            </tr>
-            <tr>
-              <td class="text-center px-8 py-1 rounded">cos</td>
-              <td class="text-center px-8 py-1 rounded">log</td>
-            </tr>
-            <tr>
-              <td class="text-center px-8 py-1 rounded">tan</td>
-              <td class="text-center px-8 py-1 rounded">√</td>
-            </tr>
-            <tr>
-              <td class="text-center px-8 py-1 rounded">EXP</td>
-              <td class="text-center px-8 py-1 rounded">x<sup>y</sup></td>
-            </tr>
-          </tbody>
-        </table>
+
+    <div class="inputs flex">
+
+      <div class="row text-center">
+        <button class="btn w-9/12 my-1">Deg</button>
+        <button class="btn w-9/12 my-1" onclick="sin()">sin</button>
+        <button class="btn w-9/12 my-1" onclick="cos()">cos</button>
+        <button class="btn w-9/12 my-1" onclick="tan()">tan</button>
+        <button class="btn w-9/12 my-1">EXP</button>
+
       </div>
-      <div class="numpad flex-grow-0">
-        <table class="border-separate w-max" style="border-spacing: .5rem;">
-          <tbody>
-            <tr class="symbols">
-              <td class="text-center px-8 py-1 rounded">(</td>
-              <td class="text-center px-8 py-1 rounded">)</td>
-              <td class="text-center px-8 py-1 rounded">%</td>
-              <td class="text-center px-8 py-1 rounded">AC</td>
-            </tr>
-            <tr>
-              <td class="text-center px-8 py-1 rounded">7</td>
-              <td class="text-center px-8 py-1 rounded">8</td>
-              <td class="text-center px-8 py-1 rounded">9</td>
-              <td class="symbols text-center rounded">÷</td>
-            </tr>
-            <tr>
-              <td class="text-center px-8 py-1 rounded">4</td>
-              <td class="text-center px-8 py-1 rounded">5</td>
-              <td class="text-center px-8 py-1 rounded">6</td>
-              <td class="symbols text-center rounded">×</td>
-            </tr>
-            <tr>
-              <td class="text-center px-8 py-1 rounded">1</td>
-              <td class="text-center px-8 py-1 rounded">2</td>
-              <td class="text-center px-8 py-1 rounded">3</td>
-              <td class="symbols text-center rounded">−</td>
-            </tr>
-            <tr>
-              <td class="text-center px-8 py-1 rounded">0</td>
-              <td class="text-center px-8 py-1 rounded">.</td>
-              <td class="symbols text-center rounded" style="background-color: #5382ec; color: white;">=</td>
-              <td class="symbols text-center rounded">+</td>
-            </tr>
-          </tbody>
-        </table>
+
+      <div class="row text-center">
+        <button class="btn w-9/12 my-1" onclick="fact()">x!</button>
+        <button class="btn w-9/12 my-1" onclick="ln()">ln</button>
+        <button class="btn w-9/12 my-1" onclick="log()">log</button>
+        <button class="btn w-9/12 my-1" onclick="sqrt()">√</button>
+        <button class="btn w-9/12 my-1" onclick="pow()">
+          x<sup>y
+        </button>
+        
       </div>
+
+      <div class="row text-center">
+        <button class="btn w-9/12 my-1">(</button>
+        <button class="btn w-9/12 my-1">7</button>
+        <button class="btn w-9/12 my-1">4</button>
+        <button class="btn w-9/12 my-1">1</button>
+        <button class="btn w-9/12 my-1">0</button>
+
+      </div>
+
+      <div class="row text-center">
+        <button class="btn w-9/12 my-1">)</button>
+        <button class="btn w-9/12 my-1">8</button>
+        <button class="btn w-9/12 my-1">5</button>
+        <button class="btn w-9/12 my-1">2</button>
+        <button class="btn w-9/12 my-1">.</button>
+
+      </div>
+
+      <div class="row text-center">
+        <button class="btn w-9/12 my-1">%</button>
+        <button class="btn w-9/12 my-1">9</button>
+        <button class="btn w-9/12 my-1">6</button>
+        <button class="btn w-9/12 my-1">3</button>
+        <button class="btn w-9/12 my-1" id="eval" onclick="equal()">=</button>
+
+      </div>
+
+      <div class="row text-center">
+        <button class="btn w-9/12 my-1" id="ac" onclick="output.value=''">AC</button>
+        <button class="btn w-9/12 my-1">÷</button>
+        <button class="btn w-9/12 my-1">×</button>
+        <button class="btn w-9/12 my-1">-</button>
+        <button class="btn w-9/12 my-1">+</button>
+      </div>
+
     </div>
   </div>
 </body>
+
+<script>
+  let output = document.querySelector('#output');
+  let btn = document.querySelectorAll('.btn');
+
+  for (item of btn) {
+      item.addEventListener('click', (e) => {
+          let btntext = e.target.innerText;
+
+          if (btntext !== 'AC') {
+            if (btntext == '×') {
+              btntext = '*';
+            }
+            if (btntext == '÷') {
+              btntext = '/';
+            }
+            output.value += btntext;
+          }
+      });
+  }
+
+  function equal() {
+    output.value=eval(output.value)
+  }
+
+  function sin() {
+      output.value = Math.sin(output.value);
+  }
+  function cos() {
+      output.value = Math.cos(output.value);
+  }
+  function tan() {
+      output.value = Math.tan(output.value);
+  }
+  
+  function pow() {
+      output.value = Math.pow(output.value, 2);
+  }
+  function sqrt() {
+      output.value = Math.sqrt(output.value, 2);
+  }
+
+  function log() {
+      output.value = Math.log(output.value);
+  }
+  function ln() {
+      output.value = Math.ln(output.value);
+  }
+
+
+</script>
 </html>
